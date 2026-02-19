@@ -76,12 +76,12 @@ class ProductControllerTest {
     @Test
     void getProducts_invalidPage_throwsException() throws Exception {
         mockMvc.perform(get("/api/products?page=-1&size=10"))
-                .andExpect(status().isInternalServerError());
+                .andExpect(status().is4xxClientError());
     }
 
     @Test
     void getProducts_invalidSize_throwsException() throws Exception {
         mockMvc.perform(get("/api/products?page=0&size=0"))
-                .andExpect(status().isInternalServerError());
+                .andExpect(status().is4xxClientError());
     }
 }
