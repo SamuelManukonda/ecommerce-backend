@@ -1,0 +1,222 @@
+[
+  {
+    "id": "1",
+    "name": "Wireless Noise-Cancelling Headphones",
+    "description": "Premium over-ear headphones with active noise cancellation and 30-hour battery life.",
+    "price": 299.99,
+    "currency": "USD",
+    "category": "Electronics",
+    "stock": 50,
+    "imageUrl": "https://example.com/images/headphones.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Smartphone X12",
+    "description": "Latest flagship smartphone with 6.7-inch OLED display and 5G connectivity.",
+    "price": 999.00,
+    "currency": "USD",
+    "category": "Electronics",
+    "stock": 25,
+    "imageUrl": "https://example.com/images/smartphone-x12.jpg"
+  },
+  {
+    "id": "3",
+    "name": "4K Ultra HD Smart TV",
+    "description": "55-inch 4K TV with HDR support and built-in streaming apps.",
+    "price": 649.99,
+    "currency": "USD",
+    "category": "Electronics",
+    "stock": 15,
+    "imageUrl": "https://example.com/images/tv-4k.jpg"
+  },
+  {
+    "id": "4",
+    "name": "Running Shoes Pro",
+    "description": "Lightweight running shoes with advanced cushioning for long-distance runs.",
+    "price": 129.50,
+    "currency": "USD",
+    "category": "Footwear",
+    "stock": 100,
+    "imageUrl": "https://example.com/images/running-shoes.jpg"
+  },
+  {
+    "id": "5",
+    "name": "Leather Messenger Bag",
+    "description": "Handcrafted leather bag with laptop compartment and adjustable strap.",
+    "price": 189.00,
+    "currency": "USD",
+    "category": "Accessories",
+    "stock": 40,
+    "imageUrl": "https://example.com/images/leather-bag.jpg"
+  },
+  {
+    "id": "6",
+    "name": "Mechanical Gaming Keyboard",
+    "description": "RGB backlit mechanical keyboard with blue switches.",
+    "price": 89.99,
+    "currency": "USD",
+    "category": "Electronics",
+    "stock": 60,
+    "imageUrl": "https://example.com/images/keyboard.jpg"
+  },
+  {
+    "id": "7",
+    "name": "Ergonomic Office Chair",
+    "description": "Comfortable mesh chair with lumbar support and adjustable height.",
+    "price": 249.99,
+    "currency": "USD",
+    "category": "Furniture",
+    "stock": 20,
+    "imageUrl": "https://example.com/images/office-chair.jpg"
+  },
+  {
+    "id": "8",
+    "name": "Stainless Steel Water Bottle",
+    "description": "Insulated water bottle keeps drinks cold for 24 hours.",
+    "price": 24.95,
+    "currency": "USD",
+    "category": "Home & Kitchen",
+    "stock": 200,
+    "imageUrl": "https://example.com/images/water-bottle.jpg"
+  },
+  {
+    "id": "9",
+    "name": "Yoga Mat",
+    "description": "Non-slip yoga mat made from eco-friendly materials.",
+    "price": 35.00,
+    "currency": "USD",
+    "category": "Fitness",
+    "stock": 80,
+    "imageUrl": "https://example.com/images/yoga-mat.jpg"
+  },
+  {
+    "id": "10",
+    "name": "Bluetooth Speaker",
+    "description": "Portable waterproof speaker with 360-degree sound.",
+    "price": 59.99,
+    "currency": "USD",
+    "category": "Electronics",
+    "stock": 75,
+    "imageUrl": "https://example.com/images/speaker.jpg"
+  },
+  {
+    "id": "11",
+    "name": "Coffee Maker",
+    "description": "Programmable drip coffee maker with thermal carafe.",
+    "price": 79.99,
+    "currency": "USD",
+    "category": "Home & Kitchen",
+    "stock": 35,
+    "imageUrl": "https://example.com/images/coffee-maker.jpg"
+  },
+  {
+    "id": "12",
+    "name": "Digital Camera",
+    "description": "Mirrorless digital camera with 24MP sensor and 4K video recording.",
+    "price": 1200.00,
+    "currency": "USD",
+    "category": "Electronics",
+    "stock": 10,
+    "imageUrl": "https://example.com/images/camera.jpg"
+  },
+  {
+    "id": "13",
+    "name": "Men's Casual Shirt",
+    "description": "100% cotton button-down shirt available in various colors.",
+    "price": 45.00,
+    "currency": "USD",
+    "category": "Apparel",
+    "stock": 150,
+    "imageUrl": "https://example.com/images/shirt.jpg"
+  },
+  {
+    "id": "14",
+    "name": "Women's Summer Dress",
+    "description": "Floral print summer dress made from breathable fabric.",
+    "price": 55.00,
+    "currency": "USD",
+    "category": "Apparel",
+    "stock": 120,
+    "imageUrl": "https://example.com/images/dress.jpg"
+  },
+  {
+    "id": "15",
+    "name": "Smart Watch",
+    "description": "Fitness tracker with heart rate monitor and GPS.",
+    "price": 199.99,
+    "currency": "USD",
+    "category": "Electronics",
+    "stock": 45,
+    "imageUrl": "https://example.com/images/smart-watch.jpg"
+  },
+  {
+    "id": "16",
+    "name": "Backpack",
+    "description": "Durable backpack with laptop sleeve and multiple compartments.",
+    "price": 65.00,
+    "currency": "USD",
+    "category": "Accessories",
+    "stock": 90,
+    "imageUrl": "https://example.com/images/backpack.jpg"
+  },
+  {
+    "id": "17",
+    "name": "Desk Lamp",
+    "description": "LED desk lamp with adjustable brightness and color temperature.",
+    "price": 39.99,
+    "currency": "USD",
+    "category": "Home & Kitchen",
+    "stock": 55,
+    "imageUrl": "https://example.com/images/lamp.jpg"
+  },
+  {
+    "id": "18",
+    "name": "Wireless Mouse",
+    "description": "Ergonomic wireless mouse with precision optical sensor.",
+    "price": 29.99,
+    "currency": "USD",
+    "category": "Electronics",
+    "stock": 110,
+    "imageUrl": "https://example.com/images/mouse.jpg"
+  },
+  {
+    "id": "19",
+    "name": "Blender",
+    "description": "High-speed blender for smoothies and shakes.",
+    "price": 89.00,
+    "currency": "USD",
+    "category": "Home & Kitchen",
+    "stock": 30,
+    "imageUrl": "https://example.com/images/blender.jpg"
+  },
+  {
+    "id": "20",
+    "name": "Tent",
+    "description": "2-person camping tent, waterproof and easy to set up.",
+    "price": 149.99,
+    "currency": "USD",
+    "category": "Outdoors",
+    "stock": 18,
+    "imageUrl": "https://example.com/images/tent.jpg"
+  },
+  {
+    "id": "21",
+    "name": "Sunglasses",
+    "description": "Polarized sunglasses with UV400 protection.",
+    "price": 110.00,
+    "currency": "USD",
+    "category": "Accessories",
+    "stock": 70,
+    "imageUrl": "https://example.com/images/sunglasses.jpg"
+  },
+  {
+    "id": "22",
+    "name": "Gaming Monitor",
+    "description": "27-inch 144Hz gaming monitor with 1ms response time.",
+    "price": 329.99,
+    "currency": "USD",
+    "category": "Electronics",
+    "stock": 22,
+    "imageUrl": "https://example.com/images/monitor.jpg"
+  }
+]
