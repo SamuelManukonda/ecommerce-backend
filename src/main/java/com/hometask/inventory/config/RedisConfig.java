@@ -1,7 +1,7 @@
-package com.hometask.ecommerce.config;
+package com.hometask.inventory.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.hometask.ecommerce.model.Product;
+import com.hometask.inventory.model.Product;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;

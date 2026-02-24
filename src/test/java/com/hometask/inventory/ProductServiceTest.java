@@ -1,13 +1,12 @@
-package com.hometask.ecommerce;
+package com.hometask.inventory;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.hometask.ecommerce.dto.PaginatedResponse;
-import com.hometask.ecommerce.dto.ProductDto;
-import com.hometask.ecommerce.model.Product;
-import com.hometask.ecommerce.service.ProductService;
+import com.hometask.inventory.dto.PaginatedResponse;
+import com.hometask.inventory.dto.ProductDto;
+import com.hometask.inventory.model.Product;
+import com.hometask.inventory.service.ProductService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.data.redis.core.ListOperations;

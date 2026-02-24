@@ -1,4 +1,4 @@
-package com.hometask.ecommerce.dto;
+package com.hometask.inventory.dto;
 
 import java.util.List;
 

@@ -1,8 +1,8 @@
-package com.hometask.ecommerce.dto;
+package com.hometask.inventory.model;
 
 import java.math.BigDecimal;
 
-public class ProductDto {
+public class Product {
     private String id;
     private String name;
     private String description;
@@ -13,10 +13,10 @@ public class ProductDto {
     private String imageUrl;
     private BigDecimal rating;
 
-    public ProductDto() {
+    public Product() {
     }
 
-    public ProductDto(String id, String name, String description, BigDecimal price, String currency, String category, int stock, String imageUrl, BigDecimal rating) {
+    public Product(String id, String name, String description, BigDecimal price, String currency, String category, int stock, String imageUrl, BigDecimal rating) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -100,4 +100,3 @@ public class ProductDto {
         this.rating = rating;
     }
 }
-
