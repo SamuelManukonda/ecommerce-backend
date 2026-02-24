@@ -3,6 +3,7 @@ package com.hometask.ecommerce;
 
 import com.hometask.ecommerce.controller.ProductController;
 import com.hometask.ecommerce.dto.PaginatedResponse;
+import com.hometask.ecommerce.dto.ProductDto;
 import com.hometask.ecommerce.model.Product;
 import com.hometask.ecommerce.service.ProductService;
 import org.junit.jupiter.api.Test;
@@ -44,6 +45,21 @@ class ProductControllerTest {
         );
     }
 
+    private ProductDto sampleProductDto() {
+        return new ProductDto(
+                "1",
+                "Test Product",
+                "A sample product",
+                new BigDecimal("19.99"),
+                "USD",
+                "Electronics",
+                100,
+                "http://example.com/image.jpg",
+
+                new BigDecimal("4.5")
+        );
+    }
+
     @Test
     void getProducts_returnsPaginatedResponse() throws Exception {
         PaginatedResponse<Product> response = new PaginatedResponse<>(
@@ -64,7 +80,7 @@ class ProductControllerTest {
     @Test
     void getAllProducts_returnsList() throws Exception {
         Mockito.when(productService.getAllProducts())
-                .thenReturn(Arrays.asList(sampleProduct()));
+                .thenReturn(Arrays.asList(sampleProductDto()));
 
         mockMvc.perform(get("/api/products/all"))
                 .andExpect(status().isOk())

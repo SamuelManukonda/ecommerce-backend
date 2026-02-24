@@ -2,6 +2,8 @@ package com.hometask.ecommerce.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hometask.ecommerce.dto.PaginatedResponse;
+import com.hometask.ecommerce.dto.ProductDto;
+import com.hometask.ecommerce.dto.ProductMapper;
 import com.hometask.ecommerce.model.Product;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -88,9 +90,9 @@ public class ProductService {
      *
      * @return returns all products present in redis
      */
-    public List<Product> getAllProducts() {
+    public List<ProductDto> getAllProducts() {
         // Fetch all products
         List<Product> content = redisTemplate.opsForList().range(REDIS_KEY, 0, -1);
-        return content != null ? content : Collections.emptyList();
+        return ProductMapper.toDtoList(content);
     }
 }
