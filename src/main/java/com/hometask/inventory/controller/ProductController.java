@@ -1,9 +1,9 @@
-package com.hometask.ecommerce.controller;
+package com.hometask.inventory.controller;
 
-import com.hometask.ecommerce.dto.PaginatedResponse;
-import com.hometask.ecommerce.dto.ProductDto;
-import com.hometask.ecommerce.model.Product;
-import com.hometask.ecommerce.service.ProductService;
+import com.hometask.inventory.dto.PaginatedResponse;
+import com.hometask.inventory.dto.ProductDto;
+import com.hometask.inventory.model.Product;
+import com.hometask.inventory.service.ProductService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

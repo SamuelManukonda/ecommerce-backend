@@ -1,10 +1,10 @@
-package com.hometask.ecommerce.service;
+package com.hometask.inventory.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.hometask.ecommerce.dto.PaginatedResponse;
-import com.hometask.ecommerce.dto.ProductDto;
-import com.hometask.ecommerce.dto.ProductMapper;
-import com.hometask.ecommerce.model.Product;
+import com.hometask.inventory.dto.PaginatedResponse;
+import com.hometask.inventory.dto.ProductDto;
+import com.hometask.inventory.dto.ProductMapper;
+import com.hometask.inventory.model.Product;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;

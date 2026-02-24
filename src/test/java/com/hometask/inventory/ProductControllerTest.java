@@ -1,11 +1,11 @@
-package com.hometask.ecommerce;
+package com.hometask.inventory;
 
 
-import com.hometask.ecommerce.controller.ProductController;
-import com.hometask.ecommerce.dto.PaginatedResponse;
-import com.hometask.ecommerce.dto.ProductDto;
-import com.hometask.ecommerce.model.Product;
-import com.hometask.ecommerce.service.ProductService;
+import com.hometask.inventory.controller.ProductController;
+import com.hometask.inventory.dto.PaginatedResponse;
+import com.hometask.inventory.dto.ProductDto;
+import com.hometask.inventory.model.Product;
+import com.hometask.inventory.service.ProductService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;

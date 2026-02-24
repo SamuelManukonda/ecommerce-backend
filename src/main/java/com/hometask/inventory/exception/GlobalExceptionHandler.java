@@ -1,4 +1,4 @@
-package com.hometask.ecommerce.exception;
+package com.hometask.inventory.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

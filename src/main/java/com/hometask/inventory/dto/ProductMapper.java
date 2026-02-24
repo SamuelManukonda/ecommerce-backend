@@ -1,6 +1,6 @@
-package com.hometask.ecommerce.dto;
+package com.hometask.inventory.dto;
 
-import com.hometask.ecommerce.model.Product;
+import com.hometask.inventory.model.Product;
 
 import java.util.Collections;
 import java.util.List;
