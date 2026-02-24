@@ -2,6 +2,7 @@ package com.hometask.ecommerce;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hometask.ecommerce.dto.PaginatedResponse;
+import com.hometask.ecommerce.dto.ProductDto;
 import com.hometask.ecommerce.model.Product;
 import com.hometask.ecommerce.service.ProductService;
 import org.junit.jupiter.api.BeforeEach;
@@ -58,7 +59,7 @@ public class ProductServiceTest {
         List<Product> products = Arrays.asList(sampleProduct());
         when(listOperations.range("product_list", 0, -1)).thenReturn(products);
 
-        List<Product> result = productService.getAllProducts();
+        List<ProductDto> result = productService.getAllProducts();
 
         assertEquals(1, result.size());
         assertEquals("Test Product", result.get(0).getName());
@@ -70,7 +71,7 @@ public class ProductServiceTest {
     void getAllProducts_returnsEmptyListWhenNull() {
         when(listOperations.range("product_list", 0, -1)).thenReturn(null);
 
-        List<Product> result = productService.getAllProducts();
+        List<ProductDto> result = productService.getAllProducts();
 
         assertNotNull(result);
         assertTrue(result.isEmpty());
