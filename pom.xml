@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.hometask</groupId>
-	<artifactId>ecommerce</artifactId>
+	<artifactId>inventory</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ecommerce</name>
 	<description>e-commerce application</description>
