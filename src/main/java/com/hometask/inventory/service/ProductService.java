@@ -95,4 +95,45 @@ public class ProductService {
         List<Product> content = redisTemplate.opsForList().range(REDIS_KEY, 0, -1);
         return ProductMapper.toDtoList(content);
     }
+
+    /**
+     * Decrements the stock quantity of a product in Redis
+     *
+     * @param productId the ID of the product
+     * @param quantity  the quantity to decrement
+     * @return true if successful, false if product not found or insufficient stock
+     */
+    public boolean decrementProductQuantity(String productId, int quantity) {
+        List<Product> products = redisTemplate.opsForList().range(REDIS_KEY, 0, -1);
+
+        if (products == null || products.isEmpty()) {
+            System.err.println("No products found in Redis");
+            return false;
+        }
+
+        for (int i = 0; i < products.size(); i++) {
+            Product product = products.get(i);
+            if (product.getId().equals(productId)) {
+                // Check if sufficient stock exists
+                if (product.getStock() < quantity) {
+                    System.err.println("Insufficient stock for product " + productId +
+                                     ". Available: " + product.getStock() + ", Requested: " + quantity);
+                    return false;
+                }
+
+                // Decrement the stock
+                product.setStock(product.getStock() - quantity);
+
+                // Update the product in Redis at the same index
+                redisTemplate.opsForList().set(REDIS_KEY, i, product);
+
+                System.out.println("Successfully decremented stock for product " + productId +
+                                 ". New stock: " + product.getStock());
+                return true;
+            }
+        }
+
+        System.err.println("Product not found: " + productId);
+        return false;
+    }
 }
