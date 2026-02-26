@@ -90,6 +90,17 @@ class ProductControllerTest {
     }
 
     @Test
+    void getAllProducts_integration() throws Exception {
+        ProductDto dto = sampleProductDto();
+        Mockito.when(productService.getAllProducts()).thenReturn(Arrays.asList(dto));
+
+        mockMvc.perform(get("/api/products/all"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0].id").value(dto.getId()))
+                .andExpect(jsonPath("$[0].name").value(dto.getName()));
+    }
+
+    @Test
     void getProducts_invalidPage_throwsException() throws Exception {
         mockMvc.perform(get("/api/products?page=-1&size=10"))
                 .andExpect(status().is4xxClientError());
