@@ -112,18 +112,7 @@
 						<goals>
 							<goal>prepare-agent</goal>
 						</goals>
-						<configuration>
-							<excludes>
-								<!-- Exclude by package -->
-								<exclude>com/hometask/inventory/config/**</exclude>
-								<exclude>com/hometask/inventory/model/**</exclude>
-								<exclude>com/hometask/inventory/dto/**</exclude>
-								<!-- Exclude main application class -->
-								<exclude>**/*InventoryApplication*</exclude>
-							</excludes>
-						</configuration>
 					</execution>
-
 					<!-- Generate Coverage Report -->
 					<execution>
 						<id>report</id>
@@ -156,11 +145,21 @@
 <!--					</execution>-->
 
 				</executions>
+				<configuration>
+					<excludes>
+						<!-- Exclude by package -->
+						<exclude>com/hometask/inventory/config/**</exclude>
+						<exclude>com/hometask/inventory/model/**</exclude>
+						<exclude>com/hometask/inventory/dto/**</exclude>
+						<!-- Exclude main application class -->
+						<exclude>**/*InventoryApplication*</exclude>
+					</excludes>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.2.5</version> <!-- Works well with Java 21 -->
+				<version>3.2.5</version>
 			</plugin>
 
 		</plugins>
