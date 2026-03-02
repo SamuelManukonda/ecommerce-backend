@@ -5,6 +5,8 @@ import com.hometask.inventory.dto.PaginatedResponse;
 import com.hometask.inventory.dto.ProductDto;
 import com.hometask.inventory.dto.ProductMapper;
 import com.hometask.inventory.model.Product;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -23,6 +25,8 @@ public class ProductService {
     private final ObjectMapper objectMapper;
 
     private final RedisTemplate<String, Product> redisTemplate;
+
+    private final static Logger LOGGER = LoggerFactory.getLogger(ProductService.class);
 
     public ProductService(ObjectMapper objectMapper, RedisTemplate<String, Product> redisTemplate) {
         this.objectMapper = objectMapper;
@@ -107,7 +111,7 @@ public class ProductService {
         List<Product> products = redisTemplate.opsForList().range(REDIS_KEY, 0, -1);
 
         if (products == null || products.isEmpty()) {
-            System.err.println("No products found in Redis");
+            LOGGER.error("No products found in Redis");
             return false;
         }
 
@@ -117,7 +121,7 @@ public class ProductService {
                 // Check if sufficient stock exists
                 if (product.getStock() < quantity) {
                     System.err.println("Insufficient stock for product " + productId +
-                                     ". Available: " + product.getStock() + ", Requested: " + quantity);
+                            ". Available: " + product.getStock() + ", Requested: " + quantity);
                     return false;
                 }
 
@@ -127,13 +131,12 @@ public class ProductService {
                 // Update the product in Redis at the same index
                 redisTemplate.opsForList().set(REDIS_KEY, i, product);
 
-                System.out.println("Successfully decremented stock for product " + productId +
-                                 ". New stock: " + product.getStock());
+                LOGGER.info("Successfully decremented stock for product {}. New stock: {}", productId, product.getStock());
                 return true;
             }
         }
 
-        System.err.println("Product not found: " + productId);
+        LOGGER.error("Product not found: {}", productId);
         return false;
     }
 }
