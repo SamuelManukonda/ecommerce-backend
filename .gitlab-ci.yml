@@ -1,0 +1,95 @@
+image: maven:3.9-amazoncorretto-21
+
+stages:
+  - build
+  - test
+  - push-to-ecr
+  - deploy-to-ecs
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
+  AWS_DEFAULT_REGION: "eu-west-1"
+  ECR_REPOSITORY: "my-space/inventory"
+
+cache:
+  key: maven-cache
+  paths:
+    - .m2/repository
+
+build:
+  stage: build
+  script:
+    - mvn -B package --file pom.xml
+  artifacts:
+    paths:
+      - target/*.jar
+      - pom.xml
+    expire_in: 1 hour
+  only:
+    - main
+
+test:
+  stage: test
+  script:
+    - mvn test
+  needs:
+    - build
+  only:
+    - main
+    - merge_requests
+
+push-to-ecr:
+  stage: push-to-ecr
+  image: docker:24-dind
+  services:
+    - docker:24-dind
+  variables:
+    DOCKER_TLS_CERTDIR: "/certs"
+  before_script:
+    - apk add --no-cache python3 py3-pip curl
+    - pip3 install awscli --break-system-packages
+  script:
+    - >-
+      aws ecr get-login-password --region $AWS_DEFAULT_REGION |
+      docker login --username AWS --password-stdin
+      ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com
+    - ECR_REGISTRY=${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com
+    - IMAGE_TAG=inventory-latest
+    - docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+    - docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+  needs:
+    - job: test
+    - job: build
+      artifacts: true
+  only:
+    - main
+
+deploy-to-ecs:
+  stage: deploy-to-ecs
+  image:
+    name: amazon/aws-cli:latest
+    entrypoint: [""]
+  script:
+    - ECR_REGISTRY=${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com
+    - IMAGE_TAG=inventory-latest
+    - IMAGE_URI=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+    - >-
+      aws ecs describe-task-definition
+      --task-definition inventory-task
+      --region $AWS_DEFAULT_REGION
+      --query taskDefinition > task-definition.json
+    - sed -i "s|IMAGE_URI_PLACEHOLDER|$IMAGE_URI|g" task-definition.json
+    - >-
+      aws ecs register-task-definition
+      --cli-input-json file://task-definition.json
+      --region $AWS_DEFAULT_REGION
+    - >-
+      aws ecs update-service
+      --cluster inventory-cluster
+      --service inventory-service
+      --force-new-deployment
+      --region $AWS_DEFAULT_REGION
+  needs:
+    - push-to-ecr
+  only:
+    - main
