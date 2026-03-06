@@ -2,52 +2,57 @@
   {
     "id": "1",
     "name": "Wireless Noise-Cancelling Headphones",
-    "description": "Premium over-ear headphones with active noise cancellation and 30-hour battery life.",
+    "description": "Premium over-ear headphones with active noise cancellation and30-hour battery life.",
     "price": 299.99,
     "currency": "USD",
     "category": "Electronics",
     "stock": 50,
-    "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800",
+    "rating": 4.6
   },
   {
     "id": "2",
     "name": "Smartphone X12",
-    "description": "Latest flagship smartphone with 6.7-inch OLED display and 5G connectivity.",
-    "price": 999.00,
+    "description": "Latest flagship smartphone with6.7-inch OLED display and5G connectivity.",
+    "price": 999.0,
     "currency": "USD",
     "category": "Electronics",
     "stock": 25,
-    "imageUrl": "https://images.unsplash.com/photo-1511707267537-b85faf00021e?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=800",
+    "rating": 4.3
   },
   {
     "id": "3",
     "name": "4K Ultra HD Smart TV",
-    "description": "55-inch 4K TV with HDR support and built-in streaming apps.",
+    "description": "55-inch4K TV with HDR support and built-in streaming apps.",
     "price": 649.99,
     "currency": "USD",
     "category": "Electronics",
     "stock": 15,
-    "imageUrl": "https://images.unsplash.com/photo-1545291026-f3e6b19a0378?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1646861039459-fd9e3aabf3fb?w=800",
+    "rating": 4.4
   },
   {
     "id": "4",
     "name": "Running Shoes Pro",
     "description": "Lightweight running shoes with advanced cushioning for long-distance runs.",
-    "price": 129.50,
+    "price": 129.5,
     "currency": "USD",
     "category": "Footwear",
     "stock": 100,
-    "imageUrl": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800",
+    "rating": 4.2
   },
   {
     "id": "5",
     "name": "Leather Messenger Bag",
     "description": "Handcrafted leather bag with laptop compartment and adjustable strap.",
-    "price": 189.00,
+    "price": 189.0,
     "currency": "USD",
     "category": "Accessories",
     "stock": 40,
-    "imageUrl": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800",
+    "rating": 4.1
   },
   {
     "id": "6",
@@ -57,7 +62,8 @@
     "currency": "USD",
     "category": "Electronics",
     "stock": 60,
-    "imageUrl": "https://images.unsplash.com/photo-1587829191301-51331fcc6601?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1626958390898-162d3577f293?w=800",
+    "rating": 4.5
   },
   {
     "id": "7",
@@ -67,37 +73,41 @@
     "currency": "USD",
     "category": "Furniture",
     "stock": 20,
-    "imageUrl": "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=800",
+    "rating": 4.0
   },
   {
     "id": "8",
     "name": "Stainless Steel Water Bottle",
-    "description": "Insulated water bottle keeps drinks cold for 24 hours.",
+    "description": "Insulated water bottle keeps drinks cold for24 hours.",
     "price": 24.95,
     "currency": "USD",
     "category": "Home & Kitchen",
     "stock": 200,
-    "imageUrl": "https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=800",
+    "rating": 4.7
   },
   {
     "id": "9",
     "name": "Yoga Mat",
     "description": "Non-slip yoga mat made from eco-friendly materials.",
-    "price": 35.00,
+    "price": 35.0,
     "currency": "USD",
     "category": "Fitness",
     "stock": 80,
-    "imageUrl": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800",
+    "rating": 4.3
   },
   {
     "id": "10",
     "name": "Bluetooth Speaker",
-    "description": "Portable waterproof speaker with 360-degree sound.",
+    "description": "Portable waterproof speaker with360-degree sound.",
     "price": 59.99,
     "currency": "USD",
     "category": "Electronics",
     "stock": 75,
-    "imageUrl": "https://images.unsplash.com/photo-1589003077984-894e133dabab?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1589003077984-894e133dabab?w=800",
+    "rating": 4.1
   },
   {
     "id": "11",
@@ -107,37 +117,41 @@
     "currency": "USD",
     "category": "Home & Kitchen",
     "stock": 35,
-    "imageUrl": "https://images.unsplash.com/photo-1559056199-641a0ac8b8d5?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1565452344518-47faca79dc69?w=800",
+    "rating": 4.0
   },
   {
     "id": "12",
     "name": "Digital Camera",
-    "description": "Mirrorless digital camera with 24MP sensor and 4K video recording.",
-    "price": 1200.00,
+    "description": "Mirrorless digital camera with24MP sensor and4K video recording.",
+    "price": 1200.0,
     "currency": "USD",
     "category": "Electronics",
     "stock": 10,
-    "imageUrl": "https://images.unsplash.com/photo-1606986628025-35d57e735ae0?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1603208234872-619ffa1209cb?w=800",
+    "rating": 4.6
   },
   {
     "id": "13",
     "name": "Men's Casual Shirt",
     "description": "100% cotton button-down shirt available in various colors.",
-    "price": 45.00,
+    "price": 45.0,
     "currency": "USD",
     "category": "Apparel",
     "stock": 150,
-    "imageUrl": "https://images.unsplash.com/photo-1596062476320-bb876e2e67d1?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1657483577058-e51f452120ef?w=800",
+    "rating": 3.9
   },
   {
     "id": "14",
     "name": "Women's Summer Dress",
     "description": "Floral print summer dress made from breathable fabric.",
-    "price": 55.00,
+    "price": 55.0,
     "currency": "USD",
     "category": "Apparel",
     "stock": 120,
-    "imageUrl": "https://images.unsplash.com/photo-1595777707802-51b40f1a3936?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1602303894456-398ce544d90b?w=800",
+    "rating": 4.2
   },
   {
     "id": "15",
@@ -147,17 +161,19 @@
     "currency": "USD",
     "category": "Electronics",
     "stock": 45,
-    "imageUrl": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800",
+    "rating": 4.4
   },
   {
     "id": "16",
     "name": "Backpack",
     "description": "Durable backpack with laptop sleeve and multiple compartments.",
-    "price": 65.00,
+    "price": 65.0,
     "currency": "USD",
     "category": "Accessories",
     "stock": 90,
-    "imageUrl": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800",
+    "rating": 4.1
   },
   {
     "id": "17",
@@ -167,7 +183,8 @@
     "currency": "USD",
     "category": "Home & Kitchen",
     "stock": 55,
-    "imageUrl": "https://images.unsplash.com/photo-1565636192335-14c46fa1120d?w=800"
+    "imageUrl": "https://picsum.photos/seed/desk-lamp/800/600",
+    "rating": 3.8
   },
   {
     "id": "18",
@@ -177,17 +194,19 @@
     "currency": "USD",
     "category": "Electronics",
     "stock": 110,
-    "imageUrl": "https://images.unsplash.com/photo-1527814050087-3793815479db?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1527814050087-3793815479db?w=800",
+    "rating": 4.3
   },
   {
     "id": "19",
     "name": "Blender",
     "description": "High-speed blender for smoothies and shakes.",
-    "price": 89.00,
+    "price": 89.0,
     "currency": "USD",
     "category": "Home & Kitchen",
     "stock": 30,
-    "imageUrl": "https://images.unsplash.com/photo-1570222094114-d054a0be6070?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1585237672814-8f85a8118bf6?w=800",
+    "rating": 4.0
   },
   {
     "id": "20",
@@ -197,26 +216,29 @@
     "currency": "USD",
     "category": "Outdoors",
     "stock": 18,
-    "imageUrl": "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=800",
+    "rating": 4.2
   },
   {
     "id": "21",
     "name": "Sunglasses",
     "description": "Polarized sunglasses with UV400 protection.",
-    "price": 110.00,
+    "price": 110.0,
     "currency": "USD",
     "category": "Accessories",
     "stock": 70,
-    "imageUrl": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=800",
+    "rating": 4.1
   },
   {
     "id": "22",
     "name": "Gaming Monitor",
-    "description": "27-inch 144Hz gaming monitor with 1ms response time.",
+    "description": "27-inch144Hz gaming monitor with 1ms response time.",
     "price": 329.99,
     "currency": "USD",
     "category": "Electronics",
     "stock": 22,
-    "imageUrl": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=800",
+    "rating": 3.5
   }
 ]
