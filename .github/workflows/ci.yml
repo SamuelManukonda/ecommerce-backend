@@ -125,7 +125,7 @@ jobs:
       - name: Update ECS service
         run: |
           aws ecs update-service \
-            --cluster inventory-cluster \
+            --cluster ecommerce \
             --service inventory-service \
             --force-new-deployment \
             --region eu-west-1
