@@ -122,10 +122,39 @@ jobs:
             --cli-input-json file://task-definition.json \
             --region eu-west-1
 
-      - name: Update ECS service
+      - name: Create or update ECS service
         run: |
-          aws ecs update-service \
+          # Get the ARN of the newly registered task definition
+          TASK_DEF_ARN=$(aws ecs describe-task-definition \
+            --task-definition inventory-task \
+            --region eu-west-1 \
+            --query "taskDefinition.taskDefinitionArn" \
+            --output text)
+
+          # Check if the service already exists
+          SERVICE_STATUS=$(aws ecs describe-services \
             --cluster ecommerce \
-            --service inventory-service \
-            --force-new-deployment \
-            --region eu-west-1
+            --services inventory-service \
+            --region eu-west-1 \
+            --query "services[0].status" \
+            --output text)
+
+          if [ "$SERVICE_STATUS" = "ACTIVE" ]; then
+            echo "Service exists, updating..."
+            aws ecs update-service \
+              --cluster ecommerce \
+              --service inventory-service \
+              --task-definition $TASK_DEF_ARN \
+              --force-new-deployment \
+              --region eu-west-1
+          else
+            echo "Service not found, creating..."
+            aws ecs create-service \
+              --cluster ecommerce \
+              --service-name inventory-service \
+              --task-definition $TASK_DEF_ARN \
+              --desired-count 1 \
+              --launch-type FARGATE \
+              --network-configuration "awsvpcConfiguration={subnets=[subnet-0e76dd00c815478c6,subnet-021bdc931a968fbf2,subnet-0edc0d97f2eb3af56],securityGroups=[sg-0c04f8311092b9142],assignPublicIp=ENABLED}" \
+              --region eu-west-1
+          fi
