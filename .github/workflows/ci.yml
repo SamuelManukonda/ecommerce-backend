@@ -105,11 +105,14 @@ jobs:
           ECR_REGISTRY=${AWS_ACCOUNT_ID}.dkr.ecr.eu-west-1.amazonaws.com
           IMAGE_URI=$ECR_REGISTRY/my-space/inventory:$IMAGE_TAG
           
-          # Download current task definition
+          # Download current task definition, stripping read-only fields
           aws ecs describe-task-definition \
             --task-definition inventory-task \
             --region eu-west-1 \
-            --query taskDefinition > task-definition.json
+            --query taskDefinition \
+            --output json \
+            | jq 'del(.taskDefinitionArn, .revision, .status, .requiresAttributes, .compatibilities, .registeredAt, .registeredBy, .deregisteredAt)' \
+            > task-definition.json
           
           # Update the image in task definition
           sed -i "s|IMAGE_URI_PLACEHOLDER|$IMAGE_URI|g" task-definition.json
